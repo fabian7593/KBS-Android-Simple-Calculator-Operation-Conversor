@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".Hexadecimal"
+    android:background="@color/colorPrimary">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Binary Hexa Power Machine"
+                android:textSize="@dimen/h1"
+                android:textColor="@color/colorPrimaryDark"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:weightSum="12">
+
+            <TextView
+                android:id="@+id/labelSumHexa"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_weight="6"
+                android:text="" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:text="" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:weightSum="12">
+
+            <EditText
+                android:id="@+id/EditTextNumbersHexa"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="6"
+                android:enabled="false"/>
+
+            <Button
+                android:id="@+id/btnPlusHexa"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="+"
+                android:backgroundTint="@color/colorAccent"
+                android:textSize="@dimen/h3"/>
+
+            <Button
+                android:id="@+id/btnResultHexa"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="="
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textSize="@dimen/h3"
+                android:textColor="@color/colorWhite"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:weightSum="12">
+
+            <TextView
+                android:id="@+id/labelResultHexa"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_weight="6"
+                android:text="" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:text="" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="left"
+            android:weightSum="12">
+
+
+            <Button
+                android:id="@+id/btnCHexa"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="C"
+                android:backgroundTint="@color/colorAccent"
+                android:textSize="@dimen/h3"/>
+
+            <Button
+                android:id="@+id/btnDHexa"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="D"
+                android:backgroundTint="@color/colorAccent"
+                android:textSize="@dimen/h3"/>
+
+            <Button
+                android:id="@+id/btnEHexa"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="E"
+                android:backgroundTint="@color/colorAccent"
+                android:textSize="@dimen/h3"/>
+
+            <Button
+                android:id="@+id/btnFHexa"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="F"
+                android:backgroundTint="@color/colorAccent"
+                android:textSize="@dimen/h3"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="left"
+            android:weightSum="12">
+
+
+            <Button
+                android:id="@+id/btn9Hexa"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="9"
+                android:backgroundTint="@color/colorAccent"
+                android:textSize="@dimen/h3"/>
+
+            <Button
+                android:id="@+id/btn0Hexa"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="0"
+                android:backgroundTint="@color/colorAccent"
+                android:textSize="@dimen/h3"/>
+
+            <Button
+                android:id="@+id/btnAHexa"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="A"
+                android:backgroundTint="@color/colorAccent"
+                android:textSize="@dimen/h3"/>
+
+            <Button
+                android:id="@+id/btnBHexa"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="B"
+                android:backgroundTint="@color/colorAccent"
+                android:textSize="@dimen/h3"/>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="left"
+            android:weightSum="12">
+
+
+            <Button
+                android:id="@+id/btn5Hexa"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="5"
+                android:backgroundTint="@color/colorAccent"
+                android:textSize="@dimen/h3"/>
+
+            <Button
+                android:id="@+id/btn6Hexa"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="6"
+                android:backgroundTint="@color/colorAccent"
+                android:textSize="@dimen/h3"/>
+
+            <Button
+                android:id="@+id/btn7Hexa"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="7"
+                android:backgroundTint="@color/colorAccent"
+                android:textSize="@dimen/h3"/>
+
+            <Button
+                android:id="@+id/btn8Hexa"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="8"
+                android:backgroundTint="@color/colorAccent"
+                android:textSize="@dimen/h3"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="left"
+            android:weightSum="12">
+
+
+            <Button
+                android:id="@+id/btn1Hexa"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="1"
+                android:backgroundTint="@color/colorAccent"
+                android:textSize="@dimen/h3"/>
+
+            <Button
+                android:id="@+id/btn2Hexa"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="2"
+                android:backgroundTint="@color/colorAccent"
+                android:textSize="@dimen/h3"/>
+
+            <Button
+                android:id="@+id/btn3Hexa"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="3"
+                android:backgroundTint="@color/colorAccent"
+                android:textSize="@dimen/h3"/>
+
+            <Button
+                android:id="@+id/btn4Hexa"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="4"
+                android:backgroundTint="@color/colorAccent"
+                android:textSize="@dimen/h3"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="left"
+            android:weightSum="12">
+
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+                android:text="" />
+
+            <Button
+                android:id="@+id/btnChangeBinary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:text="Binary"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textSize="@dimen/h3"
+                android:textColor="@color/colorWhite"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</ScrollView>
