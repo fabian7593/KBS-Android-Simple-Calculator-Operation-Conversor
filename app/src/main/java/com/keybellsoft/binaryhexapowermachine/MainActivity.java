@@ -16,7 +16,7 @@ import java.math.BigInteger;
 public class MainActivity extends AppCompatActivity implements
         View.OnClickListener {
 
-    private TextView labelSum;
+    private TextView labelsumBinaries;
     private TextView EditTextNumbers;
     private TextView labelResult;
     private Button btn0;
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements
     private RadioButton radioOperationButton;
 
     private void setView() {
-        labelSum = (TextView) findViewById(R.id.labelSum);
+        labelsumBinaries = (TextView) findViewById(R.id.labelSum);
         EditTextNumbers = (TextView) findViewById(R.id.EditTextNumbers);
         labelResult = (TextView) findViewById(R.id.labelResult);
         btn0 = (Button) findViewById(R.id.btn0);
@@ -121,20 +121,6 @@ public class MainActivity extends AppCompatActivity implements
             }
         });
     }
-
-
-    //TODO chequear codigo mas adelante sobre click listeners
-/*private void setClicksListeners() {
-    // a layout is a ViewGroup
-    ViewGroup mainLayout = (ViewGroup) findViewById(R.id.mainlayout);
-
-    for (int i = 0; i < mainLayout.getChildCount(); i++) {
-        View view = mainLayout.getChildAt(i);
-        if (view instanceof Button) {
-            view.setOnClickListener(this);
-        }
-    }
-}*/
 
     private void enableBinary() {
         btn0.setEnabled(true);
@@ -242,14 +228,48 @@ public class MainActivity extends AppCompatActivity implements
         } else if (v == btnF) {
             EditTextNumbers.setText(EditTextNumbers.getText().toString() + "F");
         } else if (v == btnResult) {
-
-            labelResult.setText(
-                    operations.sum(labelSum.getText().toString(), EditTextNumbers.getText().toString())
-            );
-
+            resultButton();
         } else if (v == btnPlus) {
-            if (labelSum.getText().toString().trim().equals("")) {
-                labelSum.setText(EditTextNumbers.getText().toString());
+            plusButton();
+        } else if (v == btnClear) {
+            clean(true);
+        }
+    }
+
+
+    private void resultButton() {
+        int selectedId = radioOperationGroup.getCheckedRadioButtonId();
+        radioOperationButton = (RadioButton) findViewById(selectedId);
+
+        if (!EditTextNumbers.getText().toString().equals("")) {
+            if (labelsumBinaries.getText().toString().equals("")) {
+                labelResult.setText(EditTextNumbers.getText().toString());
+            } else {
+
+                if (radioOperationButton.getId() == R.id.radioBinary) {
+                    labelResult.setText(
+                            operations.sumBinaries(labelsumBinaries.getText().toString(), EditTextNumbers.getText().toString())
+                    );
+                } else if (radioOperationButton.getId() == R.id.radioHexa) {
+                    String sumBinariesBinary = operations.sumBinaries(
+                            operations.hexToBin(labelsumBinaries.getText().toString()),
+                            operations.hexToBin(EditTextNumbers.getText().toString())
+                    );
+
+                    labelResult.setText(operations.convertToHexa(sumBinariesBinary));
+                }
+            }
+        } else {
+            labelResult.setText(labelsumBinaries.getText().toString());
+        }
+    }
+
+    private void plusButton() {
+        if (!EditTextNumbers.getText().toString().equals("")) {
+
+            if (labelsumBinaries.getText().toString().trim().equals("")) {
+                labelsumBinaries.setText(EditTextNumbers.getText().toString());
+                labelResult.setText(labelsumBinaries.getText().toString());
                 EditTextNumbers.setText("");
             } else {
                 // get selected radio button from radioGroup
@@ -257,33 +277,33 @@ public class MainActivity extends AppCompatActivity implements
                 radioOperationButton = (RadioButton) findViewById(selectedId);
 
                 if (radioOperationButton.getId() == R.id.radioBinary) {
-                    labelSum.setText(
-                            operations.sum(labelSum.getText().toString(), EditTextNumbers.getText().toString())
+                    labelsumBinaries.setText(
+                            operations.sumBinaries(labelsumBinaries.getText().toString(), EditTextNumbers.getText().toString())
                     );
+                    labelResult.setText(labelsumBinaries.getText().toString());
                     EditTextNumbers.setText("");
                 } else if (radioOperationButton.getId() == R.id.radioHexa) {
 
-                    String sumBinary = operations.sum(
-                            operations.hexToBin(labelSum.getText().toString()),
+                    String sumBinariesBinary = operations.sumBinaries(
+                            operations.hexToBin(labelsumBinaries.getText().toString()),
                             operations.hexToBin(EditTextNumbers.getText().toString())
                     );
 
-                    labelSum.setText(
-                            operations.convertToHexa(sumBinary)
+                    labelsumBinaries.setText(
+                            operations.convertToHexa(sumBinariesBinary)
                     );
+                    labelResult.setText(labelsumBinaries.getText().toString());
                     EditTextNumbers.setText("");
 
                 }
 
             }
-        } else if (v == btnClear) {
-            clean(true);
         }
     }
 
 
     private void clean(Boolean cleanResult) {
-        labelSum.setText("");
+        labelsumBinaries.setText("");
         EditTextNumbers.setText("");
         if (cleanResult) {
             labelResult.setText("");
